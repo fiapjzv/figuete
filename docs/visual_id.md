@@ -73,34 +73,32 @@ aquele toque de "computador da NASA em 1969".
 
 Rascunho do logo feito a mão:
 
-![Logo](../art/logo/draft_01.png)
+<center>
+<img src="../art/logo/draft_01.png" height="300" />
+</center>
 
 Como não tenho habilidades artísticas nem de design também pedi sugestões para a IA baseadas em um briefing:
 
-![Gemini 1](../ia/logo/gemini.png)
-
-![GPT 1](../ia/logo/gpt_1.png)
-
-![GPT 1](../ia/logo/gpt_2.png)
+<center>
+<img src="../ia/logo/gemini.png" height="300" />
+<img src="../ia/logo/gpt_1.png" height="300" />
+<img src="../ia/logo/gpt_2.png" height="300" />
+</center>
 
 # Concept Art
 
-[Concept Art](../art/concept.jpg)
+![Concept Art](../art/concept.jpg)
 
 # Materiais, Texturas e Iluminação
 
-[Cardboard](../art/textures/cardboard_circle.png)
 
-[Old newspaper](../art/textures/old_newspaper_circle.png)
-
-[Tin can](../art/textures/tincan.avif)
+<img src="../art/textures/cardboard_circle.png" height="200" style="border-radius:100%"/>
+<img src="../art/textures/old_newspaper_circle.png" height="200" style="border-radius:100%" />
+<img src="../art/textures/tincan_circle.png" height="200" style="border-radius:100%" />
 
 # Interface
 
-[Menu](./wireframes/menu.svg)
+![Menu](./wireframes/menu.svg)
 
-[Gameplay](./wireframes/gameplay.svg)
+![Gameplay](./wireframes/gameplay.svg)
 
-# Efeitos Visuais
-
-// TODO: Exemplos de partículas, iluminação, explosões, magia, glitches etc.
