@@ -73,7 +73,7 @@ aquele toque de "computador da NASA em 1969".
 
 Rascunho do logo feito a mão:
 
-![Logo](../art/logo.png)
+![Logo](../art/logo/draft_01.png)
 
 Como não tenho habilidades artísticas nem de design também pedi sugestões para a IA baseadas em um briefing:
 
@@ -88,6 +88,12 @@ Como não tenho habilidades artísticas nem de design também pedi sugestões pa
 [Concept Art](../art/concept.jpg)
 
 # Materiais, Texturas e Iluminação
+
+[Cardboard](../art/textures/cardboard_circle.png)
+
+[Old newspaper](../art/textures/old_newspaper_circle.png)
+
+[Tin can](../art/textures/tincan.avif)
 
 # Interface
 
