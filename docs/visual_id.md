@@ -97,6 +97,10 @@ Como não tenho habilidades artísticas nem de design também pedi sugestões pa
 
 # Interface
 
+[Menu](./wireframes/menu.svg)
+
+[Gameplay](./wireframes/gameplay.svg)
+
 # Efeitos Visuais
 
 // TODO: Exemplos de partículas, iluminação, explosões, magia, glitches etc.
