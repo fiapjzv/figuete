@@ -70,3 +70,27 @@ retro-futurista que remete à Corrida Espacial dos anos 60 (Apollo 11) sem sacri
 aquele toque de "computador da NASA em 1969".
 
 # Marca
+
+Rascunho do logo feito a mão:
+
+![Logo](../art/logo.png)
+
+Como não tenho habilidades artísticas nem de design também pedi sugestões para a IA baseadas em um briefing:
+
+![Gemini 1](../ia/logo/gemini.png)
+
+![GPT 1](../ia/logo/gpt_1.png)
+
+![GPT 1](../ia/logo/gpt_2.png)
+
+# Concept Art
+
+[Concept Art](../art/concept.jpg)
+
+# Materiais, Texturas e Iluminação
+
+# Interface
+
+# Efeitos Visuais
+
+// TODO: Exemplos de partículas, iluminação, explosões, magia, glitches etc.
