@@ -1,4 +1,4 @@
-public sealed class NullGameLogger : IGameLogger
+public sealed class NullLogger : IGameLogger
 {
     public IMsgLogger? Debug => null;
 
@@ -8,7 +8,7 @@ public sealed class NullGameLogger : IGameLogger
 
     public IExceptionMsgLogger? Warn => null;
 
-    private NullGameLogger() { }
+    private NullLogger() { }
 
-    public static IGameLogger Instance { get; } = new NullGameLogger();
+    public static IGameLogger Instance { get; } = new NullLogger();
 }

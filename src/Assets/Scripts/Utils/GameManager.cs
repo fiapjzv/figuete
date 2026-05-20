@@ -1,10 +1,56 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public partial class GameManager : MonoBehaviour
 {
+    private GameSettings _gameSettings = null!;
+    private IGameLogger _logger = null!;
+
     public void Awake()
     {
-        throw new NotImplementedException();
+        var (events, i18n, logger) = SetupBasicServices();
+
+        _gameSettings = Resources.Load<GameSettings>(GAME_SETTINGS_CONFIG_PATH);
+        ValidateConfig(_gameSettings, logger);
+
+        SubscribeQuitEvent(events, logger);
+        StartI18n(i18n, logger);
+        SetupDefaultCam(_gameSettings.mainCameraPrefab, logger);
+        ShowLoading(_gameSettings.loadingScreenPrefab, logger);
+        SetupGameServices();
+
+        DoSetup(events, logger);
+        _logger = logger;
     }
+
+    public void Start()
+    {
+        AttachDefaultCam(_logger);
+    }
+
+    private static void ValidateConfig(GameSettings? gameSettings, IGameLogger logger)
+    {
+        Guard.NotNull(gameSettings?.loadingScreenPrefab, logger);
+        Guard.NotNull(gameSettings?.mainCameraPrefab, logger);
+    }
+
+    private static void DoSetup(IEvents events, IGameLogger logger)
+    {
+        var currScene = SceneManager.GetActiveScene().name.AsScene();
+        if (currScene == Scene.Bootstrap)
+        {
+            events.Publish(new ChangeSceneEvt(Scene.MainMenu));
+        }
+        else
+        {
+#if DEBUG
+            logger.Warn?.Log($"Starting execution on scene {currScene}.");
+            events.Publish(new ChangeSceneEvt(currScene));
+#else
+            Guard.Panic($"Cannot start game on scene {currScene}");
+#endif
+        }
+    }
+
+    private const string GAME_SETTINGS_CONFIG_PATH = "Config/GameSettings";
 }
