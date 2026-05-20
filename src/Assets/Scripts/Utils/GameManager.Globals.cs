@@ -24,13 +24,4 @@ public partial class GameManager
     //       `root.style.SetProperty("--color-bg-main", Palette.BgMainColor);`
     /// <summary>Which color to show when nothing is being displayed on the screen.</summary>
     public const string CLEAR_SCREEN_COLOR = "#121212";
-
-    public static class DepthLayers
-    {
-        public const float CAMERA_GLOBAL_Z = -10f;
-        public const float TABLE_ZONE_Z = 0f;
-    }
-
-    /// <summary>Viewport height in world units using the default camera orthographic projection</summary>
-    public const float VIEWPORT_HEIGHT = 14f;
 }

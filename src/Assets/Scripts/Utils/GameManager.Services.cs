@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 
 public partial class GameManager
@@ -24,8 +23,8 @@ public partial class GameManager
         return (events, i18n, logger);
     }
 
-    private static void SetupGameServices()
+    private void SetupGameServices()
     {
-        throw new NotImplementedException();
+        Service.Register<IGameGrid>(new GameGrid(_defaultCam));
     }
 }

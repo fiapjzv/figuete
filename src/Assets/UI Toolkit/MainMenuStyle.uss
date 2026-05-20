@@ -1,0 +1,59 @@
+#root {
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+
+    color: var(--color-white);
+    background-color: var(--color-bg-main);
+}
+
+#menu-container {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+
+    margin: var(--margin-xl);
+}
+
+#game-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--margin-xl);
+}
+
+.menu-item {
+    font-size: var(--font-size-lg);
+    padding: var(--padding-md) var(--padding-xl);
+
+    background-color: var(--color-transparent);
+    /* NOTE: removing button border - `border: none;` does not work in uss */
+    border-width: 0;
+}
+
+.menu-item:hover {
+    scale: 1.1;
+}
+
+.menu-item.disabled {
+    color: var(--color-disabled);
+}
+
+.menu-item.disabled:hover {
+    /* NOTE: not scaling disabled button */
+    scale: 1.0;
+}
+
+.menu-subtext {
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+    margin-top: var(--margin-xs);
+}
+
+#quit-btn {
+    transition-property: background-color;
+    transition-duration: 0.15s;
+}
+
+#quit-btn:hover {
+    background-color: var(--color-danger);
+}

@@ -19,10 +19,9 @@ public interface IGameGrid
     BaseTransform CurrBaseTransform();
 }
 
-public partial class GameGrid : MonoBehaviour, IGameGrid
+public partial class GameGrid : IGameGrid
 {
-    [SerializeField]
-    private Camera _cam = null!;
+    private readonly Camera _cam;
 
     public int Columns { get; } = 3;
     public int Rows { get; } = 2;
@@ -31,9 +30,19 @@ public partial class GameGrid : MonoBehaviour, IGameGrid
     private int _currColumn = 1;
     private int _currRow = 0;
 
+    private readonly static BaseTransform[] _quadrantTransforms =
+    {
+        new(new Vector3(0f, -3f, 0f), new Vector3(0, 90, 80)),
+    };
+
+    public GameGrid(Camera cam)
+    {
+        _cam = cam;
+    }
+
     public BaseTransform CurrBaseTransform()
     {
-        throw new NotImplementedException();
+        return _quadrantTransforms[0];
     }
 }
 

@@ -7,14 +7,6 @@ public partial class GameManager
     private void SetupDefaultCam(Camera camPrefab, IGameLogger logger)
     {
         var cam = Instantiate(camPrefab);
-        if (!Mathf.Approximately(cam.transform.position.z, DepthLayers.CAMERA_GLOBAL_Z))
-        {
-            logger.Error?.Log(
-                $"We assume that the z position of the main camera must be {nameof(DepthLayers.CAMERA_GLOBAL_Z)}!"
-                    + $"Not the actual value of {cam.transform.position.z}"
-            );
-            return;
-        }
 
         if (!ColorUtility.TryParseHtmlString(CLEAR_SCREEN_COLOR, out var color))
         {

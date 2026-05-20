@@ -1,0 +1,19 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <!-- estilos base -->
+    <Style src="project://database/Assets/UI%20Toolkit/BaseStyle.uss"/>
+    <!-- estilo da tela -->
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss"/>
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="menu-container">
+            <ui:Label name="game-title" text="Nome do Jogo"/>
+            <ui:Button name="story-btn" text="STORY" class="menu-item"/>
+            <ui:Button name="versus-btn" class="menu-item disabled">
+                <ui:Label text="VERSUS"/>
+                <ui:Label text="SOON" class="menu-subtext"/>
+            </ui:Button>
+            <ui:Button name="collection-btn" text="COLLECTION" class="menu-item"/>
+            <ui:Button name="settings-btn" text="SETTINGS" class="menu-item"/>
+            <ui:Button name="quit-btn" text="QUIT" class="menu-item"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
