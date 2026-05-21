@@ -32,7 +32,7 @@ public partial class GameGrid : IGameGrid
 
     private readonly static BaseTransform[] _quadrantTransforms =
     {
-        new(new Vector3(0f, -3f, 0f), new Vector3(0, 90, 80)),
+        new(new Vector3(0f, -3f, 0f), Quaternion.Euler(0, 90, 80)),
     };
 
     public GameGrid(Camera cam)
@@ -49,15 +49,15 @@ public partial class GameGrid : IGameGrid
 public readonly struct BaseTransform
 {
     public Vector3 BasePosition { get; }
-    public Vector3 BaseRotation { get; }
+    public Quaternion BaseRotation { get; }
 
-    public BaseTransform(Vector3 basePosition, Vector3 baseRotation)
+    public BaseTransform(Vector3 basePosition, Quaternion baseRotation)
     {
         BasePosition = basePosition;
         BaseRotation = baseRotation;
     }
 
-    public void Deconstruct(out Vector3 basePosition, out Vector3 baseRotation)
+    public void Deconstruct(out Vector3 basePosition, out Quaternion baseRotation)
     {
         basePosition = BasePosition;
         baseRotation = BaseRotation;

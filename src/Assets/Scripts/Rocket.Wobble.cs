@@ -18,7 +18,7 @@ public partial class Rocket
     private Vector3 _posOffsets;
     private Vector3 _rotOffsets;
 
-    private void PopulateWobbleRandomSeed()
+    private void PopulateWobbleRandomOffsets()
     {
         _posOffsets = new(Random.Range(0f, 100f), Random.Range(0f, 100f), Random.Range(0f, 100f));
         _rotOffsets = new(Random.Range(0f, 100f), Random.Range(0f, 100f), Random.Range(0f, 100f));
@@ -28,24 +28,26 @@ public partial class Rocket
     {
         var (quadCenter, quadRot) = _gameGrid.CurrBaseTransform();
 
-        var noiseSeed = Time.time;
-        var drift = Wobble(quadCenter, _posWobbleAmount, _posWobbleSpeed, noiseSeed);
-        var rot = Wobble(quadRot, _rotWobbleAmount, _rotWobbleSpeed, noiseSeed);
+        var time = Time.time;
+        var drift = Wobble(_posOffsets, _posWobbleAmount, _posWobbleSpeed, time);
+        transform.position = quadCenter + drift;
 
+        var rot = Wobble(_rotOffsets, _rotWobbleAmount, _rotWobbleSpeed, time);
         var wobbleRotation = Quaternion.Euler(rot);
         wobbleRotation.ToAngleAxis(out var totalAngle, out var localAxis);
-
         var worldAxis = transform.rotation * localAxis;
+
+        transform.rotation = quadRot;
         transform.RotateAround(_tipPivot.position, worldAxis, totalAngle);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static Vector3 Wobble(Vector3 basis, float amount, float speed, float time)
+    private static Vector3 Wobble(Vector3 randomSeed, float amount, float speed, float time)
     {
         return new Vector3(
-                x: Noise.NormalizedPerlin(basis.x, speed, time),
-                y: Noise.NormalizedPerlin(basis.y, speed, time),
-                z: Noise.NormalizedPerlin(basis.z, speed, time)
+                x: Noise.NormalizedPerlin(randomSeed.x, speed, time),
+                y: Noise.NormalizedPerlin(randomSeed.y, speed, time),
+                z: Noise.NormalizedPerlin(randomSeed.z, speed, time)
             ) * amount;
     }
 }

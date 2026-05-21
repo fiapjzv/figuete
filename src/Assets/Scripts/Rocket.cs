@@ -10,7 +10,7 @@ public partial class Rocket : MonoBehaviour
     public void Awake()
     {
         _gameGrid = Service.Get<IGameGrid>();
-        PopulateWobbleRandomSeed();
+        PopulateWobbleRandomOffsets();
     }
 
     public void Update()
