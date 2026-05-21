@@ -9,10 +9,14 @@ public partial class Rocket : GameBehavior
 
     private IGameGrid _gameGrid = null!;
 
+    private Quadrant _currQuadrant;
+
     protected override void Init()
     {
         _gameGrid = Service.Get<IGameGrid>();
         PopulateWobbleRandomOffsets();
+        _currQuadrant = _gameGrid.CurrQuadrant();
+        Logger.Debug?.Log($"Rocket starting @ {_currQuadrant}");
     }
 
     protected override IEnumerable<IDisposable> SubscribeEvents()
@@ -22,6 +26,7 @@ public partial class Rocket : GameBehavior
 
     public void Update()
     {
-        WobbleAroundQuadrantCenter();
+        WobbleAroundQuadrant();
+        HandleMoveIntention();
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /// <summary>
@@ -16,15 +15,36 @@ public interface IGameGrid
     /// <summary>
     /// The base position and rotation that the ship should be in on the current quadrant.
     /// </summary>
-    BaseTransform CurrBaseTransform();
+    Quadrant CurrQuadrant();
+
+    /// <summary>
+    /// Returns the <see cref="Quadrant"/> for the desired rocket position based on the current position and the
+    /// event direction.
+    /// </summary>
+    Result<Quadrant> MoveTo(Controls.RailShooter.MoveRocketEvent evt);
 }
 
 public partial class GameGrid : IGameGrid
 {
-    private readonly Camera _cam;
+    private readonly IGameLogger _logger;
+
+    public GameGrid(IGameLogger logger)
+    {
+        _logger = logger;
+    }
+
+    public int Columns => 3;
+    public int Rows => 2;
+
+    private Quadrant TransformFor(int col, int row)
+    {
+        var index = row * Columns + col;
+        _logger.Debug?.Log($"Transform for ({col}, {row}) @ {index}");
+        return _quadrantTransforms[index];
+    }
 
     /// <summary>Quadrants matrix indexes start at the top left, going to bottom right.</summary>
-    private static readonly BaseTransform[] _quadrantTransforms =
+    private static readonly Quadrant[] _quadrantTransforms =
     {
         new(new Vector3(-8f, 4f, 0f), Quaternion.Euler(120, 90, 80)),
         new(new Vector3(0f, 4f, 0f), Quaternion.Euler(180, 90, 80)),
@@ -33,39 +53,27 @@ public partial class GameGrid : IGameGrid
         new(new Vector3(0f, -3f, 0f), Quaternion.Euler(0, 90, 80)),
         new(new Vector3(8f, -3f, 0f), Quaternion.Euler(-30, 90, 80)),
     };
-
-    public int Columns { get; } = 3;
-    public int Rows { get; } = 2;
-
-    // NOTE: zero indexed current rocket position.
-    private int _currColumn = 1;
-    private int _currRow = 1;
-
-    public GameGrid(Camera cam)
-    {
-        _cam = cam;
-    }
-
-    public BaseTransform CurrBaseTransform()
-    {
-        return _quadrantTransforms[_currColumn * Columns + _currRow];
-    }
 }
 
-public readonly struct BaseTransform
+public readonly struct Quadrant
 {
-    public Vector3 BasePosition { get; }
-    public Quaternion BaseRotation { get; }
+    public Vector3 Pos { get; }
+    public Quaternion Rot { get; }
 
-    public BaseTransform(Vector3 basePosition, Quaternion baseRotation)
+    public Quadrant(Vector3 pos, Quaternion rot)
     {
-        BasePosition = basePosition;
-        BaseRotation = baseRotation;
+        Pos = pos;
+        Rot = rot;
     }
 
     public void Deconstruct(out Vector3 basePosition, out Quaternion baseRotation)
     {
-        basePosition = BasePosition;
-        baseRotation = BaseRotation;
+        basePosition = Pos;
+        baseRotation = Rot;
+    }
+
+    public override string ToString()
+    {
+        return $"pos: {Pos}, rot: {Rot.eulerAngles}";
     }
 }

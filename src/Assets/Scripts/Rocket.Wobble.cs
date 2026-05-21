@@ -24,20 +24,18 @@ public partial class Rocket
         _rotOffsets = new(Random.Range(0f, 100f), Random.Range(0f, 100f), Random.Range(0f, 100f));
     }
 
-    private void WobbleAroundQuadrantCenter()
+    private void WobbleAroundQuadrant()
     {
-        var (quadCenter, quadRot) = _gameGrid.CurrBaseTransform();
-
         var time = Time.time;
         var drift = Wobble(_posOffsets, _posWobbleAmount, _posWobbleSpeed, time);
-        transform.position = quadCenter + drift;
+        transform.position = _currQuadrant.Pos + drift;
 
         var rot = Wobble(_rotOffsets, _rotWobbleAmount, _rotWobbleSpeed, time);
         var wobbleRotation = Quaternion.Euler(rot);
         wobbleRotation.ToAngleAxis(out var totalAngle, out var localAxis);
         var worldAxis = transform.rotation * localAxis;
 
-        transform.rotation = quadRot;
+        transform.rotation = _currQuadrant.Rot;
         transform.RotateAround(_tipPivot.position, worldAxis, totalAngle);
     }
 

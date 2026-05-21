@@ -24,8 +24,8 @@ public partial class GameManager
         return (events, i18n, logger);
     }
 
-    private static void SetupGameServices(Camera cam)
+    private static void SetupGameServices(IGameLogger logger)
     {
-        Service.Register<IGameGrid>(new GameGrid(cam));
+        Service.Register<IGameGrid>(new GameGrid(logger));
     }
 }

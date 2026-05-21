@@ -8,8 +8,8 @@ public static class GameBootstrap
         Debug.Log($"{nameof(GameBootstrap)} running");
 
         var gameSetup = new GameObject(nameof(GameManager));
-        Object.DontDestroyOnLoad(gameSetup);
         gameSetup.AddComponent<GameManager>();
         gameSetup.AddComponent<Controls>();
+        Object.DontDestroyOnLoad(gameSetup);
     }
 }
