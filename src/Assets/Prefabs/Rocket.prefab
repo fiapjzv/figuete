@@ -168,10 +168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3755724c14115a13aa92e0b68cd96962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _posWobbleSpeed: 0
-  _posWobbleAmount: 0
-  _rotWobbleSpeed: 0
-  _rotWobbleAmount: 0
+  _dodgeSpeed: 35
+  _posWobbleSpeed: 0.3
+  _posWobbleAmount: 3
+  _rotWobbleSpeed: 0.3
+  _rotWobbleAmount: 15
   _tipPivot: {fileID: 1904658276163330172}
 --- !u!1 &4900107478149779300
 GameObject:
@@ -5208,7 +5209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7175473455346359396}
   m_Layer: 0
-  m_Name: rocket
+  m_Name: Geometry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

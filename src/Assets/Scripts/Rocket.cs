@@ -22,12 +22,12 @@ public partial class Rocket : GameBehavior
 
     protected override IEnumerable<IDisposable> SubscribeEvents()
     {
-        yield return Events.Subscribe<MoveRocketEvent>(MoveRocket);
+        yield return Events.Subscribe<MoveRocketEvent>(SteerRocket);
     }
 
     public void Update()
     {
-        WobbleAroundQuadrant();
-        HandleMoveIntention();
+        MoveRocketTo();
+        // WobbleAroundQuadrant();
     }
 }

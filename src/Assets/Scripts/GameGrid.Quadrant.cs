@@ -25,6 +25,6 @@ public readonly struct Quadrant
 
     public override string ToString()
     {
-        return $"pos: {Pos}, rot: {Rot.eulerAngles}";
+        return $"({Row},{Col}) pos: {Pos}, rot: {Rot.eulerAngles}";
     }
 }
