@@ -1,38 +1,26 @@
 using System;
+using static Controls.RailShooter.MoveRocketEvent;
 
 public partial class GameGrid
 {
-    // NOTE: zero indexed current rocket position.
-    private int _currCol = 1;
-    private int _currRow = 1;
-
-    public Quadrant CurrQuadrant()
+    public Result<Quadrant> Move(Quadrant rocketCurrQuadrant, Controls.RailShooter.MoveRocketEvent evt)
     {
-        return TransformFor(_currCol, _currRow);
-    }
-
-    public Result<Quadrant> MoveTo(Controls.RailShooter.MoveRocketEvent evt)
-    {
-        var (desiredCol, desiredRow) = evt switch
+        var (row, col) = rocketCurrQuadrant.Indexes();
+        var (desiredRow, desiredCol) = evt switch
         {
-            Controls.RailShooter.MoveRocketEvent.UP => (_currCol, _currRow - 1),
-            Controls.RailShooter.MoveRocketEvent.DOWN => (_currCol, _currRow + 1),
-            Controls.RailShooter.MoveRocketEvent.LEFT => (_currCol - 1, _currRow),
-            Controls.RailShooter.MoveRocketEvent.RIGHT => (_currCol + 1, _currRow),
+            UP => (row - 1, col),
+            DOWN => (row + 1, col),
+            LEFT => (row, col - 1),
+            RIGHT => (row, col + 1),
             _ => throw new ArgumentOutOfRangeException(nameof(evt), evt, null),
         };
 
-        if (!Valid(desiredCol, desiredRow))
-        {
-            return Result.Err<Quadrant>($"Could not move to ({desiredCol}, {desiredRow}). Already on the grid bounds.");
-        }
-
-        _currCol = desiredCol;
-        _currRow = desiredRow;
-        return Result.Ok(TransformFor(desiredCol, desiredRow));
+        return Valid(desiredRow, desiredCol)
+            ? Result.Ok(Quadrant(desiredRow, desiredCol))
+            : Result.Err<Quadrant>($"Could not move to ({desiredRow}, {desiredCol}). Already on the grid bounds.");
     }
 
-    private bool Valid(int desiredCol, int desiredRow)
+    private bool Valid(int desiredRow, int desiredCol)
     {
         return desiredCol >= 0 && desiredRow >= 0 && desiredCol < Columns && desiredRow < Rows;
     }
