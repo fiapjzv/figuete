@@ -1,4 +1,5 @@
 using System.Threading;
+using UnityEngine;
 
 public partial class GameManager
 {
@@ -23,8 +24,8 @@ public partial class GameManager
         return (events, i18n, logger);
     }
 
-    private void SetupGameServices()
+    private static void SetupGameServices(Camera cam)
     {
-        Service.Register<IGameGrid>(new GameGrid(_defaultCam));
+        Service.Register<IGameGrid>(new GameGrid(cam));
     }
 }

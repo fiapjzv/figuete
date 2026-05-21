@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 internal static class ReflectionExtensions
 {
-    internal static string TryGetName<T>(this Action<T> action)
+    internal static string TryGetName<T>(this Action<T>? action)
     {
         // NOTE: although nullable objects are enabled here is better to be defensive about it
         if (action is null)
@@ -22,7 +22,7 @@ internal static class ReflectionExtensions
         return $"{className}.{methodName}";
     }
 
-    internal static string TryGetName<T>(this Func<T, Task> action)
+    internal static string TryGetName<T>(this Func<T, Task>? action)
     {
         // NOTE: although nullable objects are enabled here is better to be defensive about it
         if (action is null)

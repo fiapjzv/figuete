@@ -17,7 +17,7 @@ public partial class GameManager : MonoBehaviour
         StartI18n(i18n, logger);
         SetupDefaultCam(_gameSettings.mainCameraPrefab, logger);
         ShowLoading(_gameSettings.loadingScreenPrefab, logger);
-        SetupGameServices();
+        SetupGameServices(_defaultCam);
 
         DoSetup(events, logger);
         _logger = logger;
