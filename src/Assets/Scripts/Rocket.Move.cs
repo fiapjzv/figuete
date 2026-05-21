@@ -9,7 +9,7 @@ public partial class Rocket
     private Vector3 _stablePosition;
     private Quaternion _stableRot;
 
-    private MoveCommand? _currMovement;
+    private MoveCommand? _currMoveCmd;
 
     private void SteerRocket(MoveRocketEvent evt)
     {
@@ -21,7 +21,7 @@ public partial class Rocket
         }
 
         Logger.Debug?.Log($"Going to {targetQuadrant}");
-        _currMovement = new MoveCommand(transform, targetQuadrant, _dodgeTimeInSecs);
+        _currMoveCmd = new MoveCommand(transform, targetQuadrant, _dodgeTimeInSecs);
     }
 
     private (Vector3 pos, Quaternion rot, bool arrived) MoveRocketTo(
@@ -30,9 +30,9 @@ public partial class Rocket
         Quaternion stableRot
     )
     {
-        var (targetPos, targetRot) = moveCmd.TargetQuadrant.Transform();
-        var isMoving = stablePos.MoveTowards(targetPos, moveCmd.TranslateSpeed, out var newPos);
-        var isRotating = stableRot.RotateTo(targetRot, moveCmd.RotateSpeed, out var newRot);
+        var (targetPos, targetRot, posSpeed, rotSpeed) = moveCmd;
+        var isMoving = stablePos.MoveTowards(targetPos, posSpeed, out var newPos);
+        var isRotating = stableRot.RotateTo(targetRot, rotSpeed, out var newRot);
 
         Logger.Debug?.Log($"Moving to {moveCmd} @ {transform}");
         return (newPos, newRot, arrived: !isMoving && !isRotating);
@@ -63,11 +63,12 @@ public partial class Rocket
         {
             return TargetQuadrant.ToString();
         }
-    }
 
-    private void UpdateStableTransform(Quadrant quadrant)
-    {
-        _stablePosition = quadrant.Pos;
-        _stableRot = quadrant.Rot;
+        public void Deconstruct(out Vector3 targetPos, out Quaternion targetRot, out float posSpeed, out float rotSpeed)
+        {
+            (targetPos, targetRot) = TargetQuadrant.Transform();
+            posSpeed = TranslateSpeed;
+            rotSpeed = RotateSpeed;
+        }
     }
 }

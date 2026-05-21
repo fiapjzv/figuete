@@ -10,41 +10,40 @@ public partial class Rocket : GameBehavior
     [SerializeField]
     private Transform _tipPivot = null!;
 
+    private State _currState;
     private Quadrant _currQuadrant;
 
     protected override void Init()
     {
         _gameGrid = Service.Get<IGameGrid>();
-        PopulateWobbleRandomOffsets();
-
         _currQuadrant = _gameGrid.Quadrant(row: 1, col: 1);
-        UpdateStableTransform(_currQuadrant);
+
+        GameplayParamsInit();
+        StartAnimationParamsInit();
         Logger.Debug?.Log($"Rocket starting @ {_currQuadrant}");
     }
 
     protected override IEnumerable<IDisposable> SubscribeEvents()
     {
         yield return Events.Subscribe<MoveRocketEvent>(SteerRocket);
+        yield return Events.Subscribe<RocketInPositionToStart>(StartGamePlay);
     }
 
     public void Update()
     {
-        if (_currMovement is not null)
+        switch (_currState)
         {
-            var (newPos, newRot, arrived) = MoveRocketTo(_currMovement.Value, _stablePosition, _stableRot);
-
-            if (arrived)
-            {
-                Logger.Debug?.Log($"Arrived at new quadrant {_currMovement.Value.TargetQuadrant}");
-                _currQuadrant = _currMovement.Value.TargetQuadrant;
-                _currMovement = null;
-            }
-            (_stablePosition, _stableRot) = (newPos, newRot);
+            case State.START_ANIMATION:
+                HandleStartAnimation();
+                break;
+            case State.GAMEPLAY:
+                HandleGameplay();
+                break;
+            case State.GAME_OVER_ANIMATION:
+                HandleGameOver();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
-
-        var (unstablePos, unstableRot) = WobbleAround(_stablePosition, _stableRot);
-
-        transform.position = unstablePos;
-        transform.rotation = unstableRot;
     }
 }

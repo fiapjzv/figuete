@@ -12,7 +12,7 @@ public static class TransformHelpers
         var step = Time.deltaTime * speed;
         newPos = Vector3.MoveTowards(from, target, step);
         var distance = Vector3.Distance(newPos, target);
-        return distance > step;
+        return distance > 0.001f;
     }
 
     /// <summary>
