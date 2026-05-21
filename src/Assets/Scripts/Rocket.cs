@@ -9,6 +9,7 @@ public partial class Rocket : GameBehavior
 
     [SerializeField]
     private Transform _tipPivot = null!;
+
     private Quadrant _currQuadrant;
 
     protected override void Init()
@@ -17,6 +18,7 @@ public partial class Rocket : GameBehavior
         PopulateWobbleRandomOffsets();
 
         _currQuadrant = _gameGrid.Quadrant(row: 1, col: 1);
+        UpdateStableTransform(_currQuadrant);
         Logger.Debug?.Log($"Rocket starting @ {_currQuadrant}");
     }
 
@@ -27,7 +29,22 @@ public partial class Rocket : GameBehavior
 
     public void Update()
     {
-        MoveRocketTo();
-        // WobbleAroundQuadrant();
+        if (_currMovement is not null)
+        {
+            var (newPos, newRot, arrived) = MoveRocketTo(_currMovement.Value, _stablePosition, _stableRot);
+
+            if (arrived)
+            {
+                Logger.Debug?.Log($"Arrived at new quadrant {_currMovement.Value.TargetQuadrant}");
+                _currQuadrant = _currMovement.Value.TargetQuadrant;
+                _currMovement = null;
+            }
+            (_stablePosition, _stableRot) = (newPos, newRot);
+        }
+
+        var (unstablePos, unstableRot) = WobbleAround(_stablePosition, _stableRot);
+
+        transform.position = unstablePos;
+        transform.rotation = unstableRot;
     }
 }

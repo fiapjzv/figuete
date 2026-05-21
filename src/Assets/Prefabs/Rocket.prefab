@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3755724c14115a13aa92e0b68cd96962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _dodgeSpeed: 35
+  _dodgeTimeInSecs: 0.5
   _posWobbleSpeed: 0.3
   _posWobbleAmount: 3
   _rotWobbleSpeed: 0.3

@@ -6,6 +6,9 @@ public partial class Rocket
     [SerializeField]
     private float _dodgeTimeInSecs = 0.5f;
 
+    private Vector3 _stablePosition;
+    private Quaternion _stableRot;
+
     private MoveCommand? _currMovement;
 
     private void SteerRocket(MoveRocketEvent evt)
@@ -21,28 +24,18 @@ public partial class Rocket
         _currMovement = new MoveCommand(transform, targetQuadrant, _dodgeTimeInSecs);
     }
 
-    private void MoveRocketTo()
+    private (Vector3 pos, Quaternion rot, bool arrived) MoveRocketTo(
+        MoveCommand moveCmd,
+        Vector3 stablePos,
+        Quaternion stableRot
+    )
     {
-        if (_currMovement is null)
-        {
-            return;
-        }
-
-        var moveCmd = _currMovement.Value;
-
         var (targetPos, targetRot) = moveCmd.TargetQuadrant.Transform();
-        var isMoving = transform.MoveTowards(targetPos, moveCmd.TranslateSpeed);
-        var isRotating = transform.RotateTo(targetRot, moveCmd.RotateSpeed);
+        var isMoving = stablePos.MoveTowards(targetPos, moveCmd.TranslateSpeed, out var newPos);
+        var isRotating = stableRot.RotateTo(targetRot, moveCmd.RotateSpeed, out var newRot);
 
-        if (isMoving || isRotating)
-        {
-            Logger.Debug?.Log($"Moving to {moveCmd} @ {transform}");
-            return;
-        }
-
-        Logger.Debug?.Log($"Arrived at new quadrant {moveCmd.TargetQuadrant}");
-        _currQuadrant = moveCmd.TargetQuadrant;
-        _currMovement = null;
+        Logger.Debug?.Log($"Moving to {moveCmd} @ {transform}");
+        return (newPos, newRot, arrived: !isMoving && !isRotating);
     }
 
     public readonly struct MoveCommand
@@ -70,5 +63,11 @@ public partial class Rocket
         {
             return TargetQuadrant.ToString();
         }
+    }
+
+    private void UpdateStableTransform(Quadrant quadrant)
+    {
+        _stablePosition = quadrant.Pos;
+        _stableRot = quadrant.Rot;
     }
 }

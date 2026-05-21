@@ -24,19 +24,22 @@ public partial class Rocket
         _rotOffsets = new(Random.Range(0f, 100f), Random.Range(0f, 100f), Random.Range(0f, 100f));
     }
 
-    private void WobbleAroundQuadrant()
+    private (Vector3 unstablePos, Quaternion unstableRot) WobbleAround(Vector3 stablePos, Quaternion stableRot)
     {
         var time = Time.time;
+
         var drift = Wobble(_posOffsets, _posWobbleAmount, _posWobbleSpeed, time);
-        transform.position = _currQuadrant.Pos + drift;
+        var driftedPos = stablePos + drift;
 
-        var rot = Wobble(_rotOffsets, _rotWobbleAmount, _rotWobbleSpeed, time);
-        var wobbleRotation = Quaternion.Euler(rot);
+        var rotAngle = Wobble(_rotOffsets, _rotWobbleAmount, _rotWobbleSpeed, time);
+        var wobbleRotation = Quaternion.Euler(rotAngle);
         wobbleRotation.ToAngleAxis(out var totalAngle, out var localAxis);
-        var worldAxis = transform.rotation * localAxis;
 
-        transform.rotation = _currQuadrant.Rot;
-        transform.RotateAround(_tipPivot.position, worldAxis, totalAngle);
+        var worldAxis = stableRot * localAxis;
+        var rotationDelta = Quaternion.AngleAxis(totalAngle, worldAxis);
+        var pivotWorldPos = driftedPos + (stableRot * _tipPivot.localPosition);
+
+        return driftedPos.RotateAround(stableRot, pivotWorldPos, rotationDelta);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
