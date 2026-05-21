@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public partial class Rocket : MonoBehaviour
+public partial class Rocket : GameBehavior
 {
     [SerializeField]
     private Transform _tipPivot = null!;
 
     private IGameGrid _gameGrid = null!;
 
-    public void Awake()
+    protected override void Init()
     {
         _gameGrid = Service.Get<IGameGrid>();
         PopulateWobbleRandomOffsets();
@@ -17,11 +17,4 @@ public partial class Rocket : MonoBehaviour
     {
         WobbleAroundQuadrantCenter();
     }
-
-    // Vector3 GetQuadrantCenter(int col, int row)
-    // {
-    //     var viewportX = (col + 0.5f) / columns;
-    //     var viewportY = (row + 0.5f) / rows;
-    //     return _cam.ViewportToWorldPoint(new Vector3(viewportX, viewportY, distanceFromCamera));
-    // }
 }

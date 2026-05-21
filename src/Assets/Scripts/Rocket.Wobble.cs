@@ -4,13 +4,13 @@ using UnityEngine;
 public partial class Rocket
 {
     [SerializeField]
-    private float _posWobbleSpeed = 1.2f;
+    private float _posWobbleSpeed = 0.3f;
 
     [SerializeField]
-    private float _posWobbleAmount = 0.5f;
+    private float _posWobbleAmount = 3f;
 
     [SerializeField]
-    private float _rotWobbleSpeed = 1.5f;
+    private float _rotWobbleSpeed = 0.3f;
 
     [SerializeField]
     private float _rotWobbleAmount = 15f;

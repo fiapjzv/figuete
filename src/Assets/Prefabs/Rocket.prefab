@@ -168,10 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3755724c14115a13aa92e0b68cd96962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _posWobbleSpeed: 1.2
-  _posWobbleAmount: 0.5
-  _rotWobbleSpeed: 1.5
-  _rotWobbleAmount: 15
+  _posWobbleSpeed: 0
+  _posWobbleAmount: 0
+  _rotWobbleSpeed: 0
+  _rotWobbleAmount: 0
   _tipPivot: {fileID: 1904658276163330172}
 --- !u!1 &4900107478149779300
 GameObject:
