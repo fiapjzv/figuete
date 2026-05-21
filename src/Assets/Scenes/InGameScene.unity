@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: _rotWobbleAmount
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7556960716685199070, guid: 7b7fff979ca313061921839a1e041e5f, type: 3}
+      propertyPath: m_Name
+      value: Geometry
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
