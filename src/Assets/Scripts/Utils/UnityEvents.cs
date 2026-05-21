@@ -16,9 +16,20 @@ public class UnityEvents : Events
         _syncContext = syncContext;
     }
 
-    protected override void ScheduleSyncHandlersRun<TEvt>(List<Action<TEvt>> handlers, TEvt evt) =>
-        _syncContext.Post(_ => SyncHandlersRun(handlers, evt), null);
+    protected override void ScheduleSyncHandlersRun<TEvt>(List<Action<TEvt>> handlers, TEvt evt)
+    {
+        // If we are already on the main thread, execute immediately.
+        if (SynchronizationContext.Current == _syncContext)
+        {
+            SyncHandlersRun(handlers, evt);
+            return;
+        }
 
-    protected override void ScheduleAsyncHandlersRun<TEvt>(List<Func<TEvt, Task>> handlers, TEvt evt) =>
+        _syncContext.Post(_ => SyncHandlersRun(handlers, evt), null);
+    }
+
+    protected override void ScheduleAsyncHandlersRun<TEvt>(List<Func<TEvt, Task>> handlers, TEvt evt)
+    {
         _syncContext.Post(_ => _ = AsyncHandlersRun(handlers, evt), null);
+    }
 }

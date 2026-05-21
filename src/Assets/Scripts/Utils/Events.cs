@@ -43,7 +43,7 @@ public interface IEvents
 /// <inheritdoc cref="IEvents"/>
 public abstract partial class Events : IEvents
 {
-    private readonly IGameLogger _logger;
+    protected readonly IGameLogger _logger;
 
     // NOTE: making it thread-safe by locking the handlers dictionary only during Subscribe
     private readonly object _subLock = new();
