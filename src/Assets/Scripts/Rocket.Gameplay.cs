@@ -17,7 +17,6 @@ public partial class Rocket
 
         var (unstablePos, unstableRot) = WobbleAround(_stablePosition, _stableRot);
 
-        Logger.Debug?.Log($"unstablePos {unstablePos} / unstableRot {unstableRot}");
         transform.position = unstablePos;
         transform.rotation = unstableRot;
     }
