@@ -2,4 +2,8 @@
 
 - [ ] remove blender materials from geometry
 - [x] ensure UV on the start
-- [ ] fix multiple input controls
+- [x] fix multiple input controls
+- [ ] meteors
+- [ ] meteor collision
+- [ ] wobble per damage
+- [ ] pee bar

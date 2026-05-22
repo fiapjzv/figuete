@@ -22,6 +22,7 @@ public partial class Rocket
 
         Logger.Debug?.Log($"Going to {targetQuadrant}");
         _currMoveCmd = new MoveCommand(transform, targetQuadrant, _dodgeTimeInSecs);
+        _currQuadrant = targetQuadrant;
     }
 
     private (Vector3 pos, Quaternion rot, bool arrived) MoveRocketTo(

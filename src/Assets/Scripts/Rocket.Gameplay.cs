@@ -9,7 +9,6 @@ public partial class Rocket
             if (arrived)
             {
                 Logger.Debug?.Log($"Arrived at new quadrant {_currMoveCmd.Value.TargetQuadrant}");
-                _currQuadrant = _currMoveCmd.Value.TargetQuadrant;
                 _currMoveCmd = null;
             }
             (_stablePosition, _stableRot) = (newPos, newRot);
