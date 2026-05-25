@@ -7,7 +7,7 @@
   - [x] basic spawn (one at a time)
   - [x] basic material
   - [x] basic movement
-  - [ ] basic rotation
+  - [x] basic rotation
   - [ ] accell after rocket plane
   - [ ] collision
   - [ ] multiple speeds

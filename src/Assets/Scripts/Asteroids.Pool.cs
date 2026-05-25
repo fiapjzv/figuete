@@ -36,8 +36,15 @@ public partial class Asteroids
     private void ActivateAsteroid(Asteroid asteroid)
     {
         Logger.Debug?.Log($"Asteroid activated: {asteroid}!");
+        asteroid.transform.position = new Vector3(0, 0, GameGrid.ASTEROIDS_SPAWN_PLANE_Z);
         asteroid.Speed = Random.Range(5f, 10f);
         asteroid.EulerAngSpeed = Asteroid.RandomAngSpeed();
+
+        // NOTE: generating perceived shape variance
+        asteroid.transform.rotation = Random.rotation;
+        var randomScale = Random.Range(0.8f, 1.2f);
+        asteroid.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+
         asteroid.gameObject.SetActive(true);
     }
 
