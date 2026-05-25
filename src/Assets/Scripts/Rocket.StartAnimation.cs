@@ -8,11 +8,7 @@ public partial class Rocket
 
     private void HandleStartAnimation()
     {
-        var (newPos, newRot, arrived) = MoveRocketTo(
-            _startAnimationMove,
-            _stablePosition,
-            _stableRot
-        );
+        var (newPos, newRot, arrived) = MoveRocketTo(_startAnimationMove, _stablePosition, _stableRot);
         (_stablePosition, _stableRot) = (newPos, newRot);
         var (unstablePos, unstableRot) = WobbleAround(_stablePosition, _stableRot);
 

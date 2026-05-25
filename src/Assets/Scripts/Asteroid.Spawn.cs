@@ -2,7 +2,7 @@ using UnityEngine;
 
 public partial class Asteroid
 {
-    public Asteroid Spawn(IGameGrid grid)
+    public void Spawn(IGameGrid grid)
     {
         var speed = Random.Range(MIN_LIN_SPEED, MAX_LIN_SPEED);
         transform.position = new Vector3(0, 0, GameGrid.ASTEROIDS_SPAWN_PLANE_Z);
@@ -19,7 +19,6 @@ public partial class Asteroid
         transform.rotation = Random.rotation;
         var randomScale = Random.Range(0.8f, 1.2f);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
-        return this;
     }
 
     private static Quadrant CalculateTarget(IGameGrid grid)

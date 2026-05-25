@@ -1,8 +1,22 @@
+using UnityEngine;
+
 public partial class Asteroids
 {
-    private bool ShouldSpawnNewAsteroid()
+    [SerializeField]
+    public float _spawnRate = 2f;
+
+    private float _nextSpawnTime;
+
+    private bool ShouldSpawnNewAsteroid(float time)
     {
-        return _activeCount == 0;
+        var itsTime = time >= _nextSpawnTime;
+
+        if (itsTime)
+        {
+            _nextSpawnTime = time + _spawnRate;
+        }
+
+        return itsTime && _activeCount < POOL_SIZE;
     }
 
     private void SpawnNewAsteroid()

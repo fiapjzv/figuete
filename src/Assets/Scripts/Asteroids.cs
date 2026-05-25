@@ -33,13 +33,14 @@ public partial class Asteroids : GameBehavior
 
     public void Update()
     {
-        var time = Time.deltaTime;
-        if (ShouldSpawnNewAsteroid())
+        var time = Time.time;
+        var dt = Time.deltaTime;
+        if (ShouldSpawnNewAsteroid(time))
         {
             SpawnNewAsteroid();
         }
 
-        AsteroidsLifetime(time);
+        AsteroidsLifetime(dt);
     }
 
     private const int POOL_SIZE = 10;
