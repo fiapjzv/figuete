@@ -15,6 +15,9 @@ public interface IGameGrid
     /// <summary>Returns the <see cref="Quadrant"/> data for a specific position on the grid.</summary>
     Quadrant Quadrant(int row, int col);
 
+    /// <summary>A random quadrant.</summary>
+    Quadrant RandomQuadrant();
+
     /// <summary>
     /// Returns the <see cref="Quadrant"/> for the desired rocket position based on the current position and the
     /// event direction.
@@ -39,6 +42,13 @@ public partial class GameGrid : IGameGrid
         var index = row * Columns + col;
         _logger.Debug?.Log($"Quadrant data for ({col}, {row}) @ {index}");
         return _quadrantTransforms[index];
+    }
+
+    public Quadrant RandomQuadrant()
+    {
+        var row = Random.Range(0, Rows);
+        var col = Random.Range(0, Columns);
+        return Quadrant(row, col);
     }
 
     /// <summary>Quadrants matrix indexes start at the top left, going to bottom right.</summary>

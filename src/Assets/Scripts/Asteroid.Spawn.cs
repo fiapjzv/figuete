@@ -5,8 +5,8 @@ public partial class Asteroid
     public void Spawn(IGameGrid grid)
     {
         var speed = Random.Range(MIN_LIN_SPEED, MAX_LIN_SPEED);
-        transform.position = new Vector3(0, 0, GameGrid.ASTEROIDS_SPAWN_PLANE_Z);
-        TargetQuadrant = CalculateTarget(grid);
+        transform.position = RandomStartPosition(grid);
+        TargetQuadrant = grid.RandomQuadrant();
         Velocity = (TargetQuadrant.Pos - transform.position).normalized * speed;
 
         Rotation = new Vector3(
@@ -21,9 +21,9 @@ public partial class Asteroid
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
-    private static Quadrant CalculateTarget(IGameGrid grid)
+    private static Vector3 RandomStartPosition(IGameGrid grid)
     {
-        var (row, col) = (Random.Range(0, grid.Rows), Random.Range(0, grid.Columns));
-        return grid.Quadrant(row, col);
+        var quadrant = grid.RandomQuadrant();
+        return new Vector3(quadrant.Pos.x, quadrant.Pos.y, GameGrid.ASTEROIDS_SPAWN_PLANE_Z);
     }
 }

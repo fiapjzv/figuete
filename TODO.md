@@ -10,7 +10,7 @@
   - [x] basic rotation
   - [x] accell after rocket plane
   - [ ] collision
-  - [ ] multiple speeds
+  - [x] multiple speeds
   - [ ] algorithm to ensure possible to beat asteroid spawning
   - [x] interesting material
 - [ ] wobble per damage
@@ -19,6 +19,7 @@
 - [ ] star particle as 2D billboards
 - [ ] star model with rounded corners (for stars hanging from the ceiling)
 - [ ] flat shading on all polygons
+- [ ] alert if asteroid is next 
 - [ ] validation
   - [ ] camera should be pointing into positive z, from negative z without any angle
 
