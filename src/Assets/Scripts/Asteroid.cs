@@ -2,18 +2,20 @@ using UnityEngine;
 
 public partial class Asteroid : GameBehavior
 {
-    public float Speed { get; set; }
-    public Vector3 EulerAngSpeed { get; set; }
+    public Vector3 Velocity { get; set; }
+    public Vector3 Rotation { get; set; }
 
-    public static Vector3 RandomAngSpeed()
-    {
-        return new Vector3(
-            x: Random.Range(MIN_ANG_SPEED, MAX_ANG_SPEED),
-            y: Random.Range(MIN_ANG_SPEED, MAX_ANG_SPEED),
-            z: Random.Range(MIN_ANG_SPEED, MAX_ANG_SPEED)
-        );
-    }
+    /// <summary>The quadrant the asteroid is going to collide.</summary>
+    public Quadrant TargetQuadrant { get; set; }
+
+    private const float MIN_LIN_SPEED = 5;
+    private const float MAX_LIN_SPEED = 10;
 
     private const float MIN_ANG_SPEED = 0;
     private const float MAX_ANG_SPEED = 90;
+
+    public override string ToString()
+    {
+        return $"Asteroid Target {TargetQuadrant}; Velocity {Velocity}; Rotation {Rotation};";
+    }
 }

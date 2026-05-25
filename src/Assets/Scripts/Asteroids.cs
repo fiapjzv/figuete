@@ -13,12 +13,15 @@ public partial class Asteroids : GameBehavior
     private float _maxSpeed;
 
     private IObjectPool<Asteroid> _pool = null!;
+    private IGameGrid _grid = null!;
+
     private readonly Asteroid[] _activeAsteroids = new Asteroid[POOL_SIZE];
     private int _activeCount;
 
     protected override void Init()
     {
         Guard.NotNull(_asteroidPrefab, Logger);
+        _grid = Guard.NotNull(Service.Get<IGameGrid>(), Logger);
         _pool = CreateObjectPool(POOL_SIZE);
     }
 

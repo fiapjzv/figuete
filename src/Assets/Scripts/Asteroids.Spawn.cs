@@ -2,7 +2,7 @@ public partial class Asteroids
 {
     private bool ShouldSpawnNewAsteroid()
     {
-        return _activeCount < 0;
+        return _activeCount == 0;
     }
 
     private void SpawnNewAsteroid()

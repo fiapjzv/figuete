@@ -22,8 +22,8 @@ public partial class Asteroids
 
     private static void UpdateAsteroidTransform(Asteroid asteroid, float dt)
     {
-        asteroid.transform.Translate(Vector3.back * (asteroid.Speed * dt), Space.World);
-        asteroid.transform.Rotate(asteroid.EulerAngSpeed * dt, Space.Self);
+        asteroid.transform.Translate(asteroid.Velocity * dt, Space.World);
+        asteroid.transform.Rotate(asteroid.Rotation * dt, Space.Self);
     }
 
     private void PopAndSwapToRemoveAsteroid(Asteroid asteroid, int i)
