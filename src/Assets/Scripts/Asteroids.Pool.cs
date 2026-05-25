@@ -30,7 +30,7 @@ public partial class Asteroids
         return pool;
     }
 
-    private Asteroid CreateAsteroid() => Asteroid.Create(this, _asteroidMaterial);
+    private Asteroid CreateAsteroid() => Asteroid.Create(this, _asteroidPrefab, Logger);
 
     private void ActivateAsteroid(Asteroid m)
     {
@@ -46,7 +46,7 @@ public partial class Asteroids
 
     private void DestroyAsteroid(Asteroid m)
     {
-        Logger.Error?.Log("Asteroidis being destroyed! This should not happen.");
+        Logger.Error?.Log("Asteroids being destroyed! This should not happen.");
         Destroy(m.gameObject);
     }
 }

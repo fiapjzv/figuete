@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 public partial class Asteroids : GameBehavior
 {
     [SerializeField]
-    private Material _asteroidMaterial = null!;
+    private GameObject _asteroidPrefab = null!;
 
     [SerializeField]
     private float _minSpeed;
@@ -14,17 +14,20 @@ public partial class Asteroids : GameBehavior
 
     private IObjectPool<Asteroid> _pool = null!;
 
-    private Asteroid[] _activeAsteroids = new Asteroid[POOL_SIZE];
-    private int _activeCount = 0;
-
     protected override void Init()
     {
-        Guard.NotNull(_asteroidMaterial, Logger);
+        Guard.NotNull(_asteroidPrefab, Logger);
 
         _pool = CreateObjectPool(POOL_SIZE);
     }
 
-    void Update() { }
+    public void Update()
+    {
+        if (ShouldSpawnNewAsteroid())
+        {
+            SpawnNewAsteroid();
+        }
+    }
 
     private const int POOL_SIZE = 10;
 }
