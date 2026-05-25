@@ -19,7 +19,9 @@ public partial class GameManager
         cam.clearFlags = CameraClearFlags.SolidColor;
         cam.backgroundColor = color;
 
+        cam.tag = "MainCamera";
         _defaultCam = cam;
+
         logger.Debug?.Log("Default camera setup complete!");
     }
 
@@ -47,7 +49,6 @@ public partial class GameManager
             listener.enabled = true;
         }
     }
-    
     // NOTE: we expected that the default cam have a disabled audio listener to avoid the annoying error
     //       "There are 2 audio listeners in the scene." when we are debugging a scene directly on the editor
     private static Result<Unit> ListenerIsDisabled(Camera camPrefab)

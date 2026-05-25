@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using UnityEngine;
 using UnityEngine.Pool;
 
 public partial class Asteroids
@@ -32,16 +33,17 @@ public partial class Asteroids
 
     private Asteroid CreateAsteroid() => Asteroid.Create(this, _asteroidPrefab, Logger);
 
-    private void ActivateAsteroid(Asteroid m)
+    private void ActivateAsteroid(Asteroid asteroid)
     {
-        Logger.Debug?.Log($"Asteroid activated: {m}!");
-        m.gameObject.SetActive(true);
+        Logger.Debug?.Log($"Asteroid activated: {asteroid}!");
+        asteroid.Speed = Random.Range(1f, 2f);
+        asteroid.gameObject.SetActive(true);
     }
 
-    private void ReleaseAsteroid(Asteroid m)
+    private void ReleaseAsteroid(Asteroid asteroid)
     {
-        Logger.Debug?.Log($"Asteroid released: {m}!");
-        m.gameObject.SetActive(false);
+        Logger.Debug?.Log($"Asteroid released: {asteroid}!");
+        asteroid.gameObject.SetActive(false);
     }
 
     private void DestroyAsteroid(Asteroid m)
