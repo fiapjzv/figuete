@@ -84,3 +84,55 @@ Contagem regressiva espacial abafada em fade-in:
 
 `Fidel`: ¡Mira las estrellas, Juanito! ¡Assuma el comando del El Pollo 11, el _foguete de la Revolución!_ ¡Vamos a la
 Luna!
+
+# Barks
+
+Fidel:
+
+> ¡Cuidado, cadete! ¡Es un asteroide del bloqueo yanqui intentando frenar nuestro progreso!
+
+> ¡Sanciones espaciales! Quieren dejarnos sin piezas, ¡pero El Pollo 11 resistirá!
+
+> ¡El embargo imperialista ataca de nuevo! ¡Desvia, Juanito!
+
+> ¡No nos dejaron importar petróleo, pero olvidaron que tenemos voluntad de sobra!
+
+> ¡Excelente, camarada! Cuando llegarmos a la Luna poderemos extrair el acero que bloquearon.
+
+> ¡Si imperialismo nos niega comida, nosotros cultivaremos las estrellas!
+
+> ¡Plantaremos caña de azúcar! ¡Será la mayor cosecha de la Revolución!
+
+> El embargo no puede detener los sueños de los pioneros.
+
+> El capitalismo no vaya limitar nuestros sueños.
+
+> Quien necesita NASA, cuando tenemos (colocar aqui uma instituição tecnologica cubana)
+
+> Nuestros puertos están bloqueados pero el espacio es libre como el pueblo cubano!
+
+> ¡Como es bello este foguete. Fruto de trabajo decente, sin explorados!
+
+Juanito
+
+> Comandante, la Lua es hecha de queijo? O meu racionamento acabou ontem...
+
+> Lá em cima não tem embargo no mercado!
+
+> Ay, bateu! Esse embargo tá apertando... a minha bexiga!
+
+> Se no fuera el bloqueio, el foguete tenia un baño!
+
+> ¡Qué ganas de hacer pis!
+
+> Por que eles não deixam a gente voar em paz?!
+
+> A nave de sucata vai desmontar!
+
+> Eu só queria ser astronauta... Mas lá na loja nunca chega peça de foguete de verdade...
+
+> Na lua os Ianques podem ser nossos amigos, Comandante?
+
+> Estou segurando firme, Comandante! Pela ciência... e pra não molhar as calças!
+
+> Me disseram que era impossível viajar pro espaço sem dinheiro... ¡Mira como voa a minha sucata!
