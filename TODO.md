@@ -9,17 +9,22 @@
   - [x] basic movement
   - [x] basic rotation
   - [x] accell after rocket plane
-  - [ ] collision
+  - [x] asteroid collision
+  - [ ] collision with rocket
   - [x] multiple speeds
-  - [ ] algorithm to ensure possible to beat asteroid spawning
   - [x] interesting material
+- [ ] use events on all events
+  - [ ] end of start animation
+  - [ ] asteroid spawn
+  - [x] asteroids collision
+  - [ ] rocket collision
 - [ ] wobble per damage
 - [ ] pee bar
 - [ ] Fidel's commentary UI
 - [ ] star particle as 2D billboards
 - [ ] star model with rounded corners (for stars hanging from the ceiling)
 - [ ] flat shading on all polygons
-- [ ] alert if asteroid is next 
+- [ ] alert if asteroid is next
 - [ ] validation
   - [ ] camera should be pointing into positive z, from negative z without any angle
 

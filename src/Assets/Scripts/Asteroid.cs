@@ -2,8 +2,9 @@ using UnityEngine;
 
 public partial class Asteroid : GameBehavior
 {
-    public Vector3 Velocity { get; set; }
-    public Vector3 Rotation { get; set; }
+    public float LinSpeed { get; private set; }
+    public Vector3 Velocity { get; private set; }
+    public Vector3 Rotation { get; private set; }
 
     /// <summary>The quadrant the asteroid is going to collide.</summary>
     public Quadrant TargetQuadrant { get; set; }
@@ -17,5 +18,21 @@ public partial class Asteroid : GameBehavior
     public override string ToString()
     {
         return $"Asteroid Target {TargetQuadrant}; Velocity {Velocity}; Rotation {Rotation};";
+    }
+
+    public void RecalculateVelocity(float linSpeed)
+    {
+        LinSpeed = linSpeed;
+        Velocity = (TargetQuadrant.Pos - transform.position).normalized * LinSpeed;
+    }
+
+    public void UpdateRotation(Vector3 rotation)
+    {
+        Rotation = rotation;
+    }
+
+    public void Accelerate(float factor)
+    {
+        Velocity *= factor;
     }
 }

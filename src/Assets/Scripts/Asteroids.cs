@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -23,6 +25,12 @@ public partial class Asteroids : GameBehavior
         Guard.NotNull(_asteroidPrefab, Logger);
         _grid = Guard.NotNull(Service.Get<IGameGrid>(), Logger);
         _pool = CreateObjectPool(POOL_SIZE);
+    }
+
+    protected override IEnumerable<IDisposable> SubscribeEvents()
+    {
+        yield return Events.Subscribe<Asteroid.CollisionEvt>(SwapTargetQuadrants);
+        yield return Events.Subscribe<Asteroid.CollisionEvt>(ReverseRotation);
     }
 
     public void Start()

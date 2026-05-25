@@ -28,7 +28,7 @@ public partial class Asteroids
         // NOTE: accel on asteroid after collision to avoid the asteroid to obstruct the camera
         if (GameGrid.AfterCollisionZone(asteroid.transform.position))
         {
-            asteroid.Velocity *= 1.05f;
+            asteroid.Accelerate(1.1f);
         }
     }
 

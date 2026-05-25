@@ -513,6 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b745511d924fb09ebe88fd6491940d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroids
+  _spawnRate: 1
   _asteroidPrefab: {fileID: 5880915278207094835, guid: 56854d69fcf0fc9439817bf5dd2778d0, type: 3}
   _minSpeed: 5
   _maxSpeed: 30
