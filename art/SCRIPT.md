@@ -19,16 +19,18 @@ da TV.
 
 `Mamãe (V.O - Off screen)`: ¡JUANITO! (a voz dela corta a frase do astronauta)
 
-`Juanito (V.O)`: _¿Qué, mamá?!_
+`Juanito (V.O)`: ¿Qué, mamá?!
 
-`Mamãe (V.O - Ríspida)`: Já não é hora de criança estar acordada! Muito menos tentando pescar sinal de televisão de
-Ianque.
+`Mamãe (V.O - Ríspida)`: ¡Ya no son horas para que un niño esté despierto! Y mucho menos tratando de agarrar señal de
+televisión yanqui.
 
-`Mamãe (V.O - Com voz mais doce)`: Vamos, _mi amor_. Pra cama, escova os dentes, faz um xixi e vamos dormir. _¡Ahora!_
+`Mamãe (V.O - Com voz mais doce)`: Vamos, mi amor. A la cama, lávate los dientes, haz pipí y a dormir. ¡Ahora!
 
 > A imagem da TV encolhe até virar um ponto branco acompanhado do barulho clássico de "clique" de desliga.
 
-`Mamãe (V.O - Voltando a ficar ríspida)`: Olha lá que se você fizer xixi na cama de novo...
+`Mamãe (V.O - Voltando a ficar ríspida)`: ¡Y ay de ti como te orines en la cama otra vez!
+
+`Juanito (V.O)`: Mamáaaaaa!
 
 ---
 
@@ -44,13 +46,13 @@ Contagem regressiva espacial abafada em fade-in:
 
 > `[Voz de locutor da NASA (em inglês), menos abafada:]` _Six, Five..._
 
-`Fidel (V.O. com efeito de rádio antigo - como no discurso)`: _¡Cadete! ¡Cadete! ¡Despierta!_
+`Fidel (V.O. com efeito de rádio antigo - como no discurso)`: ¡Cadete! ¡Cadete! ¡Despierta!
 
 > `[Visuais]`  
 > **Fade in** (A tela clareia).  
 > Plataforma de lançamento com o foguete de sucata é exibida.
 
-`Juanito (Sonolento e confuso)`: Humn? _¿Qué pasa?_
+`Juanito (Sonolento e confuso)`: Mmm? ¿Qué pasa?
 
 > `[Áudio - Fundo]`  
 > A contagem americana continua, agora alta e clara: (...Four, three...)
@@ -62,7 +64,7 @@ Contagem regressiva espacial abafada em fade-in:
 > Dialog box surge com Fidel Castro feito de um recorte de jornal em preto e branco. A boca do recorte se move de forma
 > tosca, descolando da cabeça (referência: Saddam Hussein em South Park).
 
-`Fidel (Voz clara e exaltada)`: ¡ASTRONAUTA! ¡ESTO NO ES UN TREINO! ¡DESPIERTA!
+`Fidel (Voz clara e exaltada)`: ¡ASTRONAUTA! ¡ESTO NO ES UN SIMULACRO! ¡DESPIERTA!
 
 > `[Áudio - Fundo ao mesmo tempo em que Fidel termina]`  
 > _Two, One, Zero... We have a lift off!_  
@@ -70,7 +72,8 @@ Contagem regressiva espacial abafada em fade-in:
 
 `Juanito (V.O - Em pânico total)`: _¡¿Comandante?!_ AHHHHHH!
 
-> `[Cena]` Som de estrondo gigantesco. Música frenética e animada. O foguete de sucata decola da plataforma e é ejetado
+> `[Cena]`  
+> Som de estrondo gigantesco. Música frenética e animada. O foguete de sucata decola da plataforma e é ejetado
 > violentamente para o espaço (referência: Equipe Rocket em Pokémon decolando de novo), deixando um rastro de fumaça e
 > fogos de artifício. Câmera fixa no azul do céu. Aparece a logo do jogo: _"Cuba vai lançar um foguete"_.
 
@@ -78,12 +81,12 @@ Contagem regressiva espacial abafada em fade-in:
 
 # Gameplay - Tutorial
 
-> `[Cena]` A logo se dissipa e o azul do céu agora se torna o espaço. A música se tranquiliza. Estrelas surgem. A esfera
-> da Terra aparece abaixo na tela. O foguete aparece desajeitado vindo de baixo e se estabiliza. Temos uma visão
-> traseira da nave (Câmera estilo Rail Shooter).
+> `[Cena]`  
+> A logo se dissipa e o azul do céu agora se torna o espaço. A música se tranquiliza. Estrelas surgem. A esfera da Terra
+> aparece abaixo na tela. O foguete aparece desajeitado vindo de baixo e se estabiliza. Temos uma visão traseira da nave
+> (Câmera estilo Rail Shooter).
 
-`Fidel`: ¡Mira las estrellas, Juanito! ¡Assuma el comando del El Pollo 11, el _foguete de la Revolución!_ ¡Vamos a la
-Luna!
+`Fidel`: ¡Mira las estrellas, Juanito! ¡Asume el mando de El Pollo 11, el cohete de la Revolución! ¡Vamos a la Luna!
 
 # Barks
 
@@ -93,46 +96,52 @@ Fidel:
 
 > ¡Sanciones espaciales! Quieren dejarnos sin piezas, ¡pero El Pollo 11 resistirá!
 
-> ¡El embargo imperialista ataca de nuevo! ¡Desvia, Juanito!
+> ¡El embargo imperialista ataca de nuevo! ¡Esquiva, Juanito!
 
 > ¡No nos dejaron importar petróleo, pero olvidaron que tenemos voluntad de sobra!
 
-> ¡Excelente, camarada! Cuando llegarmos a la Luna poderemos extrair el acero que bloquearon.
+> ¡Excelente, camarada! Cuando lleguemos a la Luna podremos extraer el acero que nos bloquearon.
 
-> ¡Si imperialismo nos niega comida, nosotros cultivaremos las estrellas!
+> ¡Si el imperialismo nos niega la comida, nosotros cultivaremos las estrellas!
 
-> ¡Plantaremos caña de azúcar! ¡Será la mayor cosecha de la Revolución!
+> El capitalismo no va a limitar nuestros sueños.
 
-> El embargo no puede detener los sueños de los pioneros.
+> ¡Quién necesita a la NASA, cuando tenemos a la UCI!
 
-> El capitalismo no vaya limitar nuestros sueños.
+> ¡Nuestros puertos están bloqueados, pero el espacio es libre como el pueblo cubano!
 
-> Quien necesita NASA, cuando tenemos (colocar aqui uma instituição tecnologica cubana)
-
-> Nuestros puertos están bloqueados pero el espacio es libre como el pueblo cubano!
-
-> ¡Como es bello este foguete. Fruto de trabajo decente, sin explorados!
+> ¡Qué bello es este cohete, niño! ¡Fruto del trabajo digno, sin explotados!
 
 Juanito
 
-> Comandante, la Lua es hecha de queijo? O meu racionamento acabou ontem...
+> Comandante, ¿la Luna está hecha de queso? Mi cuota se acabó ayer...  
+> Fidel: ¡Si hay queso, lo repartiremos por la libreta para todo el pueblo!
 
-> Lá em cima não tem embargo no mercado!
+> ¡Allá arriba no hay embargo en la bodega!  
+> Fidel: ¡Así mismo, cadete! ¡El cosmos no tiene un dueño!
 
-> Ay, bateu! Esse embargo tá apertando... a minha bexiga!
+> ¡Ay, chocó! Este embargo está apretando... ¡mi vejiga!  
+> Fidel: ¡Resistencia, Juanito! ¡Un verdadero revolucionario no se rinde ante la presión hidrostática!
 
-> Se no fuera el bloqueio, el foguete tenia un baño!
+> ¡Si no fuera por el bloqueo, el cohete tendría un baño!  
+> Fidel: ¡La CIA saboteó nuestra plomería espacial!
 
-> ¡Qué ganas de hacer pis!
+> ¡Qué ganas de hacer pipí!
 
-> Por que eles não deixam a gente voar em paz?!
+> ¡¿Por qué no nos dejan volar en paz?!  
+> Fidel: ¡Porque le temen al ingenio del pueblo trabajador, muchacho!
 
-> A nave de sucata vai desmontar!
+> ¡La nave esta se va a desbaratar!  
+> Fidel: ¡Con un poco de alambre y convicción, ese tareco llega a Marte!
 
-> Eu só queria ser astronauta... Mas lá na loja nunca chega peça de foguete de verdade...
+> Yo solo quería ser astronauta... Pero a la bodega nunca llegan piezas de cohete de verdad...  
+> Fidel: ¡Las piezas de verdad se forjan con el sudor de la patria!
 
-> Na lua os Ianques podem ser nossos amigos, Comandante?
+> ¿En la Luna los yanquis pueden ser nuestros amigos, Comandante?  
+> Fidel: ¡Si respetan nuestra órbita y no instalan bases militares, la Luna será un territorio de paz!
 
-> Estou segurando firme, Comandante! Pela ciência... e pra não molhar as calças!
+> ¡Me estoy aguantando firme, Comandante! Por la ciencia... ¡y para no mojar los pantalones!  
+> Fidel: ¡La historia absolverá tu vejiga, cadete!
 
-> Me disseram que era impossível viajar pro espaço sem dinheiro... ¡Mira como voa a minha sucata!
+> Me dijeron que era imposible viajar al espacio sin dinero... ¡Mira cómo vuela mi tareco!  
+> Fidel: ¡Adelante, El Pollo 11!
