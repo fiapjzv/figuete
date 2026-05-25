@@ -1,6 +1,12 @@
 # TODO
 
 - [ ] remove blender materials from geometry
+- [ ] fix depth sensation
+  - [x] try ortographic camera
+  - [x] widen the FOV
+  - [ ] cone of light from rocket tip + spotlight
+- [ ] space fog:
+      https://es.vecteezy.com/arte-vectorial/19522010-astronauta-de-dibujos-animados-en-el-espacio-ultraterrestre-paisaje-galactico
 - [x] ensure UV on the start
 - [x] fix multiple input controls
 - [ ] asteroids
