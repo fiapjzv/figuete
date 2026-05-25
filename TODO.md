@@ -8,7 +8,7 @@
   - [x] basic material
   - [x] basic movement
   - [x] basic rotation
-  - [ ] accell after rocket plane
+  - [x] accell after rocket plane
   - [ ] collision
   - [ ] multiple speeds
   - [ ] algorithm to ensure possible to beat asteroid spawning

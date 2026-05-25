@@ -54,4 +54,6 @@ public partial class GameGrid : IGameGrid
 
     public const float ROCKET_BASE_PLANE_Z = 0f;
     public const float ASTEROIDS_SPAWN_PLANE_Z = 50f;
+
+    public static bool AfterCollisionZone(Vector3 pos) => pos.z < ROCKET_BASE_PLANE_Z;
 }

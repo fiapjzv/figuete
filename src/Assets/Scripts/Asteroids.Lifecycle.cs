@@ -24,6 +24,12 @@ public partial class Asteroids
     {
         asteroid.transform.Translate(asteroid.Velocity * dt, Space.World);
         asteroid.transform.Rotate(asteroid.Rotation * dt, Space.Self);
+
+        // NOTE: accel on asteroid after collision to avoid the asteroid to obstruct the camera
+        if (GameGrid.AfterCollisionZone(asteroid.transform.position))
+        {
+            asteroid.Velocity *= 1.05f;
+        }
     }
 
     private void PopAndSwapToRemoveAsteroid(Asteroid asteroid, int i)
