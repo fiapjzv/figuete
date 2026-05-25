@@ -36,7 +36,8 @@ public partial class Asteroids
     private void ActivateAsteroid(Asteroid asteroid)
     {
         Logger.Debug?.Log($"Asteroid activated: {asteroid}!");
-        asteroid.Speed = Random.Range(1f, 2f);
+        asteroid.Speed = Random.Range(5f, 10f);
+        asteroid.EulerAngSpeed = Asteroid.RandomAngSpeed();
         asteroid.gameObject.SetActive(true);
     }
 

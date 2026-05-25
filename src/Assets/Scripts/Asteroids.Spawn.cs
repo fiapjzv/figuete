@@ -11,6 +11,6 @@ public partial class Asteroids
     {
         var newAsteroid = _activeAsteroids[_activeCount] = _pool.Get();
         _activeCount++;
-        newAsteroid.transform.position = new Vector3(0, 0, 10);
+        newAsteroid.transform.position = new Vector3(0, 0, GameGrid.ASTEROIDS_SPAWN_PLANE_Z);
     }
 }

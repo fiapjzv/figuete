@@ -6,13 +6,13 @@ public partial class Asteroids
 
     private void AsteroidsLifetime(float dt)
     {
-        // NOTE: Loops backwards to wap and Pop
+        // NOTE: Loops backwards to use Pop and swap algorithm
         for (var i = _activeCount - 1; i >= 0; i--)
         {
             var asteroid = _activeAsteroids[i];
             if (asteroid.transform.position.z < _deadZoneZ)
             {
-                RemoveAsteroidFromScreen(asteroid, i);
+                PopAndSwapToRemoveAsteroid(asteroid, i);
                 continue;
             }
 
@@ -22,12 +22,15 @@ public partial class Asteroids
 
     private static void UpdateAsteroidTransform(Asteroid asteroid, float dt)
     {
-        asteroid.transform.Translate(Vector3.back * (asteroid.Speed * dt));
+        asteroid.transform.Translate(Vector3.back * (asteroid.Speed * dt), Space.World);
+        asteroid.transform.Rotate(asteroid.EulerAngSpeed * dt, Space.Self);
     }
 
-    private void RemoveAsteroidFromScreen(Asteroid asteroid, int i)
+    private void PopAndSwapToRemoveAsteroid(Asteroid asteroid, int i)
     {
         _pool.Release(asteroid);
+        // NOTE: pop and swap works here because we are iterating backwards
+        _activeAsteroids[i] = _activeAsteroids[_activeCount - 1];
         _activeCount--;
     }
 

@@ -44,11 +44,14 @@ public partial class GameGrid : IGameGrid
     /// <summary>Quadrants matrix indexes start at the top left, going to bottom right.</summary>
     private static readonly Quadrant[] _quadrantTransforms =
     {
-        new(row: 0, col: 0, new Vector3(-8f, 4f, 0f), Quaternion.Euler(120, 90, 80)),
-        new(row: 0, col: 1, new Vector3(0f, 4f, 0f), Quaternion.Euler(180, 90, 80)),
-        new(row: 0, col: 2, new Vector3(8f, 4f, 0f), Quaternion.Euler(-120, 90, 80)),
-        new(row: 1, col: 0, new Vector3(-8f, -3f, 0f), Quaternion.Euler(30, 90, 80)),
-        new(row: 1, col: 1, new Vector3(0f, -3f, 0f), Quaternion.Euler(0, 90, 80)),
-        new(row: 1, col: 2, new Vector3(8f, -3f, 0f), Quaternion.Euler(-30, 90, 80)),
+        new(row: 0, col: 0, new Vector3(-8f, 4f, ROCKET_BASE_PLANE_Z), Quaternion.Euler(120, 90, 80)),
+        new(row: 0, col: 1, new Vector3(0f, 4f, ROCKET_BASE_PLANE_Z), Quaternion.Euler(180, 90, 80)),
+        new(row: 0, col: 2, new Vector3(8f, 4f, ROCKET_BASE_PLANE_Z), Quaternion.Euler(-120, 90, 80)),
+        new(row: 1, col: 0, new Vector3(-8f, -3f, ROCKET_BASE_PLANE_Z), Quaternion.Euler(30, 90, 80)),
+        new(row: 1, col: 1, new Vector3(0f, -3f, ROCKET_BASE_PLANE_Z), Quaternion.Euler(0, 90, 80)),
+        new(row: 1, col: 2, new Vector3(8f, -3f, ROCKET_BASE_PLANE_Z), Quaternion.Euler(-30, 90, 80)),
     };
+
+    public const float ROCKET_BASE_PLANE_Z = 0f;
+    public const float ASTEROIDS_SPAWN_PLANE_Z = 50f;
 }
