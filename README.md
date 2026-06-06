@@ -1,5 +1,9 @@
 # Cuba vai lançar um foguete 🚀
 
+> [!WARNING]
+> Esse repositório foi arquivado por causa do limite de 100MB por arquivo do GitHub
+> O fonte do jogo está hospedado em: https://git.rzuquim.com/sudaca/foguete
+
 ## Resumo do jogo
 
 ¡Hola! Soy Juanito, tengo 11 anos e moro aqui em Havana, em 1969. Toda noite, antes de dormir, fico grudado na TV vendo
